@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "dackcoin_backend": {
+      "build": "npx azle dackcoin_backend",
+      "candid": "src/dackcoin_backend/dackcoin_backend.did",
+      "gzip": true,
+      "main": "src/dackcoin_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/dackcoin_backend/dackcoin_backend.wasm"
+    },
+    "dackcoin_frontend": {
+      "dependencies": [
+        "dackcoin_backend"
+      ],
+      "source": [
+        "src/dackcoin_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "dackcoin_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
